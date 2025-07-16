@@ -1,5 +1,3 @@
-# main.py
-
 from getpass import getpass
 import os
 
