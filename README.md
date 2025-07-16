@@ -41,7 +41,9 @@ pip install -r requirements.txt
 ##File Structure
 
 main.py – Main entry point, handles input and coordination
+
 reddit_scraper.py – Fetches Reddit user content
+
 persona_generator.py – Loads model, splits text, runs persona generation
 
 
