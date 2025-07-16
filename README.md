@@ -1,22 +1,32 @@
 # Reddit Persona Extractor
 
-This tool scrapes posts and comments from a Reddit user and generates a detailed user persona using an LLM model . Useful for analyzing digital behavior or as part of user research.
+This tool scrapes posts and comments from a Reddit user and generates a detailed user persona using a Hugging Face LLM model. It’s useful for digital behavior analysis or UX/user research.
 
 ## Features
 
-- Scrapes posts and comments using PRAW
-- Constructs a persona with attributes (goals, frustrations, hobbies, etc.)
-- Cites specific Reddit content for each trait
-- Outputs to a `.txt` file
+- Scrapes Reddit data using PRAW
+- Uses LangChain to split and process text
+- Generates a structured persona with:
+  - Personality
+  - Hobbies & Interests
+  - Goals & Motivations
+  - Frustrations
+  - Writing Style
+  - Demographic Clues
+  - Citation from Reddit content
+- Outputs the result into `persona_output.txt`
 
 ## Requirements
 
 - Python 3.7+
 - PRAW
-- LLM Models
-- Reddit API credentials
+- LangChain
+- HuggingFace Transformers
+- FAISS
+- Torch
+- A Hugging Face account for model access
 
-## Setup
+#setup
 
 1. Clone the repo:
 ```bash
@@ -28,12 +38,12 @@ cd Persona-Extractor
 ```bash
 pip install -r requirements.txt
 ```
+##File Structure
 
-3. Create a `.env` file with the following:
-```
-REDDIT_CLIENT_ID=your_client_id
-REDDIT_CLIENT_SECRET=your_client_secret
-```
+main.py – Main entry point, handles input and coordination
+reddit_scraper.py – Fetches Reddit user content
+persona_generator.py – Loads model, splits text, runs persona generation
+
 
 ## Usage
 
